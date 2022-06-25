@@ -1,0 +1,205 @@
+/* Body style */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  margin: 0;
+  padding: 0;
+
+  background-image: url(/Assets/Background_image.jpg);
+}
+
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  font-size: 1.5em;
+  font-weight: 700; 
+  color: rgb(0, 0, 0);
+}
+
+.task {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Parent-div style */
+
+.parent-div {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Main Content area style */
+
+.main-content {
+  margin-top: 2em;
+  width: 100%;
+}
+
+.main-content input {
+  padding-left: 0.65em;
+  font-size: 2em;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  width: 100%;
+  line-height: 3em;
+  border-radius: 0;
+  background: none;
+  border: none;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.281);
+}
+
+.main-content input::placeholder {
+  font-weight: 400;
+  color: inherit;
+}
+
+.main-content input:focus {
+  outline: none;
+}
+
+/* Styling for the task list */
+
+.favs,
+.tasks,
+.favs ul li,
+.tasks ul li,
+.btns,
+footer {
+  display: flex;
+}
+
+.favs {
+  margin-bottom: 1em;
+}
+
+.favs,
+.tasks {
+  margin-top: 1em;
+  flex-direction: column;
+  text-align: center;
+}
+
+.btns {
+  flex-direction: row;
+  margin-right: -18px;
+}
+
+/* Styling for li item in task area */
+
+ul li {
+  color: rgb(0, 0, 0);
+  font-size: 1em;
+  font-weight: 400;
+  background: rgb(255, 255, 255);
+  padding: 0.75em 1.2em;
+  border-radius: 0.3em;
+  margin: 0.5em 0;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 1.5;
+  box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Hover Effect of the li item */
+
+ul li:hover {
+  transition: 0.2s;
+  outline-color: transparent;
+  outline-style: solid;
+  box-shadow: 0 0 0 2px #000000;
+  transform: scale(1.02);
+}
+
+.favs ul li svg,
+.tasks ul li svg {
+  height: 36px;
+  margin-left: 1.2em;
+}
+
+.favs .fav {
+  fill: #000000;
+}
+
+.bin {
+  fill: tomato;
+  transform: scale(0.75);
+}
+
+.cap {
+  transition: transform 0.1s;
+}
+
+.fav {
+  fill: lightgray;
+  transition: transform 0.2s, fill 0.5s;
+  transform: scale(1);
+}
+
+/* Footer styling */
+
+footer {
+  flex-direction: column;
+  align-items: center;
+  margin: 3em 0;
+}
+
+footer p {
+  margin: 0;
+  padding: 0;
+  height: 1.5em;
+  font-size: 1em;
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.562);
+}
+
+/* Media query */
+
+@media (min-width: 768px) {
+  .main-content input {
+    font-size: 1.2em;
+  }
+
+  .delete {
+    height: 1.2em;
+  }
+
+  .favs,
+  .tasks {
+    text-align: left;
+  }
+
+  .favs li,
+  .tasks li {
+    font-size: 1.25em;
+  }
+
+  li svg:hover {
+    cursor: pointer;
+  }
+
+  .fav,
+  .bin {
+    transform: scale(0.85);
+  }
+
+  .fav:hover {
+    transform: scale(0.9);
+  }
+
+  .bin:hover .cap {
+    transform: rotate(-9deg);
+  }
+}
